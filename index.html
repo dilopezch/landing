@@ -44,22 +44,22 @@
             font-weight: bold;
             letter-spacing: 2px;
             color: var(--color-dim-grey);
-            flex: 0 0 auto; /* Evita que el logo se encoja */
+            flex: 0 0 auto;
         }
 
-        /* Contenedor central para los botones del menú */
+        /* Contenedor central para las opciones del menú */
         nav {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex: 1; /* Ocupa el espacio disponible para centrar el bloque */
+            flex: 1;
         }
 
-        /* Contenedor de la derecha */
+        /* Contenedor de las opciones de la derecha */
         .nav-right {
             display: flex;
             gap: 20px;
-            flex: 0 0 auto; /* Mantiene su tamaño fijo a la derecha */
+            flex: 0 0 auto;
         }
 
         .menu-btn {
@@ -69,7 +69,7 @@
             font-size: 14px;
             text-transform: uppercase;
             transition: color 0.3s ease;
-            white-space: nowrap; /* Evita que el texto se rompa en dos líneas */
+            white-space: nowrap;
         }
 
         .menu-btn:hover {
@@ -125,27 +125,22 @@
             transform: translateY(-5px);
         }
 
-        .image-placeholder {
+        /* Contenedor optimizado para alojar las imágenes reales */
+        .image-container {
             width: 100%;
             height: 350px;
-            background-color: var(--color-honeydew);
             border-radius: 6px;
-            position: relative;
+            overflow: hidden;
             margin-bottom: 20px;
+            background-color: var(--color-honeydew); /* Fondo de respaldo */
         }
 
-        .image-placeholder::before,
-        .image-placeholder::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 1px;
-            background-color: rgba(113, 105, 122, 0.15);
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+            display: block;
         }
-        .image-placeholder::before { transform: rotate(45deg); }
-        .image-placeholder::after { transform: rotate(-45deg); }
 
         .product-title {
             font-size: 20px;
@@ -172,6 +167,7 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: auto; /* Empuja el botón al fondo si las descripciones varían */
         }
 
         .product-btn:hover {
@@ -179,15 +175,10 @@
             color: var(--color-white);
         }
 
-        img {
-            object-fit: cover;
-            object-position: center;
-        }
-
         /* --- RESPONSIVE DESIGNS --- */
         @media (max-width: 990px) {
             nav {
-                flex-wrap: wrap; /* Permite que los botones bajen si no hay espacio */
+                flex-wrap: wrap;
             }
         }
 
@@ -215,17 +206,17 @@
         <div class="logo">LOGO</div>
         
         <nav>
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
         </nav>
         
         <div class="nav-right">
-            <a href="#" class="menu-btn">menu btn</a>
-            <a href="#" class="menu-btn">menu btn</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
+            <a href="#" class="menu-btn">MENU BTN</a>
         </div>
     </header>
 
@@ -244,30 +235,30 @@
     <main class="products-grid">
         
         <article class="product-card">
-            <div class="image-placeholder">
-                <img src="land1.jpg" alt="img1">
+            <div class="image-container">
+                <img src="land1.jpg" alt="Modelo con sombrero blanco y suéter café">
             </div>
             <h2 class="product-title">Product title</h2>
             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            <button class="product-btn">btn</button>
+            <button class="product-btn">BUTTON</button>
         </article>
 
         <article class="product-card">
-            <div class="image-placeholder" style="background-color: var(--color-desert-sand);">
-                <img src="land2.jpg" alt="img2">
+            <div class="image-container">
+                <img src="land2.jpg" alt="Dos modelos vistiendo gabardinas beige">
             </div>
             <h2 class="product-title">Product title</h2>
             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            <button class="product-btn">btn</button>
+            <button class="product-btn">BUTTON</button>
         </article>
 
         <article class="product-card">
-            <div class="image-placeholder">
-                <img src="land3.jpg" alt="img3">
+            <div class="image-container">
+                <img src="land3.jpg" alt="Modelo con vestido largo apoyando el pie en una silla">
             </div>
             <h2 class="product-title">Product title</h2>
             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            <button class="product-btn">btn</button>
+            <button class="product-btn">BUTTON</button>
         </article>
 
     </main>
